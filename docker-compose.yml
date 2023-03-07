@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  task-poker-hero:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: task-poker-hero-bot
+    volumes:
+      - './src:/task-poker-hero-bot/src'
+      - './.env:/task-poker-hero-bot/.env'
+    env_file: .env
+    ports:
+      - '${PORT}:8080'
+
+
+    # links:
+    #   - mongo
+        
+  # mongo:
+  #   container_name: mongodb
+  #   image: mongo
+  #   ports: 
+  #     - "27018:27017"

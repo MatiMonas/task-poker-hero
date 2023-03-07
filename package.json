@@ -1,0 +1,32 @@
+{
+  "name": "pair-programming-bot",
+  "version": "2.0.0",
+  "description": "",
+  "author": "@MatiMonas",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "dev": "docker-compose up --build --quiet-pull",
+    "dev:local": "nodemon --watch src --exec ts-node src/index.ts",
+    "build": "rimraf ./dist && tsc && copyfiles -u 1 src/**/*.{yml,json,png,html,css,js,map} dist/"
+  },
+  "engines": {
+    "node": "^18.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.3",
+    "mongoose": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.41",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^2.0.16",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
